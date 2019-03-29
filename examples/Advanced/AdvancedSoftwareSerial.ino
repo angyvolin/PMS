@@ -56,22 +56,22 @@ void loop()
     Serial.println(data.PM_AE_UG_10_0);
 
     // raw particle counts
-    Serial.print("P < 0.3 (count/0.1l): ");
+    Serial.print("P > 0.3 (count/0.1l): ");
     Serial.println(data.PM_RAW_0_3);
 
-    Serial.print("P < 0.5 (count/0.1l): ");
+    Serial.print("P > 0.5 (count/0.1l): ");
     Serial.println(data.PM_RAW_0_5);
 
-    Serial.print("P < 1.0 (count/0.1l): ");
+    Serial.print("P > 1.0 (count/0.1l): ");
     Serial.println(data.PM_RAW_1_0);
 
-    Serial.print("P < 2.5 (count/0.1l): ");
+    Serial.print("P > 2.5 (count/0.1l): ");
     Serial.println(data.PM_RAW_2_5);
 
-    Serial.print("P < 5.0 (count/0.1l): ");
+    Serial.print("P > 5.0 (count/0.1l): ");
     Serial.println(data.PM_RAW_5_0);
 
-    Serial.print("P < 10.0 (count/0.1l): ");
+    Serial.print("P > 10.0 (count/0.1l): ");
     Serial.println(data.PM_RAW_10_0);
 
   }
