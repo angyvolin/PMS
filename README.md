@@ -58,7 +58,7 @@ PM 10.0 (ug/m3): 24
 ...
 ```
 ## Advanced example
-Read in passive mode but not the best way (see additional remarks). 
+Read in passive mode but not the best way (see additional remarks).
 ```cpp
 #include "PMS.h"
 
@@ -99,6 +99,9 @@ void loop()
   }
 
   Serial1.println("Going to sleep for 60 seconds.");
+  // when using SoftwareSerial for communication with PMS flush HW serial channel first before switchin to SoftwareSerial,
+  // (sensor might not be put to sleep mode properly and fan keeps running)
+  // Serial1.flush();
   pms.sleep();
   delay(60000);
 }
