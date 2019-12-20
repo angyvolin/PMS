@@ -1,10 +1,8 @@
 /*
-PMS Advances example using SoftwareSerial
-printing out
+PMS Advanced example using SoftwareSerial printing out
 - standard particles (CF=1)
-- Atmospheric environment particles
+- atmospheric environment particles
 - raw numbers of particle numbers measured by device
-
 
 NOTE: For measuring/comparing data atmospheric environment particles should be used all the time!
 */
@@ -35,8 +33,7 @@ void loop()
   pms.requestRead();
 
   Serial1.println("Wait max. 1 second for read...");
-  if (pms.readUntil(data))
-  {
+  if (pms.readUntil(data)) {
     Serial.print("PM 1.0 (ug/m3) CF=1: ");
     Serial.println(data.PM_SP_UG_1_0);
 
@@ -73,10 +70,7 @@ void loop()
 
     Serial.print("P > 10.0 (count/0.1l): ");
     Serial.println(data.PM_RAW_10_0);
-
-  }
-  else
-  {
+  } else {
     Serial1.println("No data.");
   }
 
