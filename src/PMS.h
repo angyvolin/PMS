@@ -30,6 +30,9 @@ public:
     uint16_t PM_RAW_2_5;
     uint16_t PM_RAW_5_0;
     uint16_t PM_RAW_10_0;
+
+    uint8_t version;
+    uint8_t errorCode;
   };
 
   PMS(Stream&);
@@ -46,7 +49,7 @@ private:
   enum STATUS { STATUS_WAITING, STATUS_OK };
   enum MODE { MODE_ACTIVE, MODE_PASSIVE };
 
-  uint8_t _payload[24];
+  uint8_t _payload[2 * 13];
   Stream* _stream;
   DATA* _data;
   STATUS _status;

@@ -143,6 +143,9 @@ void PMS::loop()
           _data->PM_RAW_10_0 = makeWord(_payload[22], _payload[23]);
         }
 
+        _data->version = _payload[24];
+        _data->errorCode = _payload[25];
+
         _index = 0;
         return;
       }
@@ -151,7 +154,7 @@ void PMS::loop()
         _calculatedChecksum += ch;
         uint8_t payloadIndex = _index - 4;
 
-        // Payload is common to all sensors (first 2x6 bytes).
+        // Payload is common to all sensors (first 2x13 bytes).
         if (payloadIndex < sizeof(_payload))
         {
           _payload[payloadIndex] = ch;
